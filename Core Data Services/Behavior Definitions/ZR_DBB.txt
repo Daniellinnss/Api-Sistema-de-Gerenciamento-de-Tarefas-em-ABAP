@@ -1,0 +1,37 @@
+managed implementation in class ZBP_R_DBB unique;
+strict ( 2 );
+define behavior for ZR_DBB alias ZR_DBBALIAS
+persistent table zdbb
+etag master LocalLastChanged
+lock master
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   TaskID;
+
+  field ( readonly )
+   LastChanged,
+   LocalLastChanged;
+
+  field ( readonly : update )
+   TaskID;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ZDBB
+  {
+    TaskID = task_id;
+    Title = title;
+    Description = description;
+    DueDate = due_date;
+    Priority = priority;
+    Status = status;
+    AssigneeID = assignee_id;
+    LocalLastChanged = local_last_changed;
+    LastChanged = last_changed;
+  }
+}

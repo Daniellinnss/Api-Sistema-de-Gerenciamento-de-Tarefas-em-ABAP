@@ -1,0 +1,19 @@
+@EndUserText.label : 'Tabela de Tarefas'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zdbb {
+
+  key client         : abap.clnt not null;
+  key task_id        : abap.numc(10) not null;
+  title              : abap.string(256);
+  description        : abap.string(256);
+  due_date           : abap.dats;
+  priority           : abap.string(256);
+  status             : abap.string(256);
+  assignee_id        : abap.numc(10);
+  local_last_changed : abp_locinst_lastchange_tstmpl;
+  last_changed       : abp_lastchange_tstmpl;
+
+}

@@ -1,0 +1,18 @@
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: '##GENERATED ZDBB'
+define root view entity ZR_DBB
+  as select from zdbb as ZR_DBBALIAS
+{
+  key task_id as TaskID,
+  title as Title,
+  description as Description,
+  due_date as DueDate,
+  priority as Priority,
+  status as Status,
+  assignee_id as AssigneeID,
+  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  local_last_changed as LocalLastChanged,
+  @Semantics.systemDateTime.lastChangedAt: true
+  last_changed as LastChanged
+  
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_DBB'
+define service ZAPI_DBB_O4 {
+  expose ZC_DBB as ZR_DBBALIAS;
+}

@@ -1,0 +1,18 @@
+@AccessControl.authorizationCheck: #CHECK
+@Metadata.allowExtensions: true
+@EndUserText.label: 'Projection View for ZR_DBB'
+@ObjectModel.semanticKey: [ 'TaskID' ]
+define root view entity ZC_DBB
+  provider contract transactional_query
+  as projection on ZR_DBB
+{
+  key TaskID,
+  Title,
+  Description,
+  DueDate,
+  Priority,
+  Status,
+  AssigneeID,
+  LocalLastChanged
+  
+}
